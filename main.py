@@ -123,7 +123,23 @@ def login():
     tags=["Users"],
     )
 def show_all_users():
-    pass
+    """
+    This path will show all users
+
+    Parameters:
+        -
+
+    Returns a json list with all users, with the following information:
+        - user_id: UUID
+        - email: EmailStr
+        - first_name: str
+        - last_name: str
+        - birth_date: date
+    """
+
+    with open("users.json", "r", encoding="utf-8") as f:
+        users = json.load(f)
+        return users
 
 
 ### Get a user
